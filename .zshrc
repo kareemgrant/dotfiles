@@ -50,3 +50,4 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # added by travis gem
 source /Users/kareemgrant/.travis/travis.sh
+export PATH="$HOME/.rbenv/bin:$PATH"
