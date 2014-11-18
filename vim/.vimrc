@@ -89,6 +89,7 @@ map <Leader>e :Explore<cr>
 map <Leader>v :vsplit<cr>
 map <Leader>s :split<cr>
 nnoremap <leader>a :Ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2

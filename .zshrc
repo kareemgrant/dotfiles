@@ -30,6 +30,8 @@ alias gpoh="git push origin master && git push heroku master"
 alias be="bundle exec $1"
 alias bi="bundle install"
 
+alias rc="bundle exec rails console"
+
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
@@ -37,13 +39,14 @@ unsetopt correct_all
 #export PATH=/Users/kareemgrant/.rvm/gems/ruby-1.9.3/bin:/Users/kareemgrant/.rvm/gems/ruby-1.9.3@global/bin:/Users/kareemgrant/.rvm/rubies/ruby-1.9.3/bin:/Users/kareemgrant/.rvm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/sbin:/usr/sbin
 
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/sbin:/usr/sbin
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 #source /usr/local/etc/bash_completion.d/git-completion.bash
 #
 export PATH=/usr/local/share/npm/bin:$PATH
 
 export GEM_EDITOR='mvim'
 export EDITOR='mvim'
-export PATH=/usr/local/share/npm/bin:$PATH
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# added by travis gem
+source /Users/kareemgrant/.travis/travis.sh
