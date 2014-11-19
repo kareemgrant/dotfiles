@@ -68,7 +68,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 au BufWritePre *.rb :%s/\s\+$//e
 
 " Or use vividchalk
-"colorscheme topfunky-light
+colorscheme codeschool
 "colorscheme vidvidchalk
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
@@ -110,11 +110,11 @@ noremap <C-l> <C-w>l
 noremap ,cd :cd %:p:h<CR>:pwd<CR>
 
 " Reset CommandT index after files have been added
-augroup CommandTExtension
-  autocmd!
-  autocmd FocusGained * CommandTFlush
-  autocmd BufWritePost * CommandTFlush
-augroup END
+"augroup CommandTExtension
+"  autocmd!
+"  autocmd FocusGained * CommandTFlush
+"  autocmd BufWritePost * CommandTFlush
+"augroup END
 
 " Testing mappings
 map <Leader>o :call RunCurrentLineInTest()<CR>
