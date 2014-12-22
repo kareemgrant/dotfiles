@@ -1,3 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/kareemgrant'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/kareemgrant/workspace/cardflight/SwipeSimple/lib'
+let g:netrw_dirhist_2='/Users/kareemgrant/workspace/cardflight/SwipeSimple'
+let g:netrw_dirhist_3='/Users/kareemgrant/workspace/cardflight/SwipeSimple/app'
+let g:netrw_dirhist_4='/Users/kareemgrant/workspace/cardflight/SwipeSimple/app/models'
+let g:netrw_dirhist_5='/Users/kareemgrant/workspace/cardflight/SwipeSimple/app/views/reseller/merchant_accounts'
+let g:netrw_dirhist_6='/Users/kareemgrant/workspace/cardflight/SwipeSimple/app/views/reseller/merchant_accounts/forms'
+let g:netrw_dirhist_7='/Users/kareemgrant/workspace/cardflight/SwipeSimple/app/views/reseller/merchant_accounts'

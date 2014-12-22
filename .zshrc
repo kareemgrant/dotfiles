@@ -4,18 +4,22 @@ ZSH_THEME="cloud"
 
 bindkey -v
 
-alias cdp="cd /Users/kareemgrant/Projects"
-alias cdc="cd /Users/kareemgrant/Code"
+alias cdp="cd /Users/kareemgrant/workspace/projects"
+alias cdc="cd /Users/kareemgrant/workspace/code"
 alias cdh="cd /Users/kareemgrant"
+
 alias gphm="git push heroku master"
 alias gada="git add -A"
 alias gcmsg="git commit -m"
 alias gpom="git push origin master"
 alias gpoh="git push origin master && git push heroku master"
+
 alias be="bundle exec $1"
 alias bi="bundle install"
 alias rc="bundle exec rails console"
 alias drop="cd /Users/kareemgrant/Dropbox"
+
+alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -30,7 +34,8 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:/usr/local/lib/node_modules"
 source $(brew --prefix nvm)/nvm.sh
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh --no-rehash)"
+#eval "$(rbenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export PATH=/usr/local/share/npm/bin:$PATH
 # adding text and loving it
@@ -42,3 +47,6 @@ export PATH=/usr/local/share/npm/bin:$PATH
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
+
+# added by travis gem
+source /Users/kareemgrant/.travis/travis.sh

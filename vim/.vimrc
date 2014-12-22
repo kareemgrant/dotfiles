@@ -1,8 +1,27 @@
-call pathogen#infect()
-call pathogen#helptags()
+"call pathogen#infect()
+"call pathogen#helptags()
 
-syntax on
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'mileszs/ack.vim'
+call vundle#end()
+
 filetype plugin indent on
+syntax on
 
 set smartindent
 set tabstop=2
@@ -15,7 +34,6 @@ set numberwidth=5
 
 syntax match Todo /\s\+$/
 
-set nocompatible  
 
 "autocmd BufWritePre *.rb,*.haml, *erb, *js, :%s/\s\+$//e
 
@@ -28,7 +46,6 @@ set backspace=indent,eol,start    " Intuitive backspacing.
 
 set hidden                        " Handle multiple buffers better.
 
-set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
 
 set ignorecase                    " Case-insensitive searching.
@@ -106,15 +123,21 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
+" Buffer transversal
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
 " comment to set current directory to working directory
 noremap ,cd :cd %:p:h<CR>:pwd<CR>
 
 " Reset CommandT index after files have been added
-"augroup CommandTExtension
-"  autocmd!
-"  autocmd FocusGained * CommandTFlush
-"  autocmd BufWritePost * CommandTFlush
-"augroup END
+augroup CommandTExtension
+  autocmd!
+  autocmd FocusGained * CommandTFlush
+  autocmd BufWritePost * CommandTFlush
+augroup END
 
 " Testing mappings
 map <Leader>o :call RunCurrentLineInTest()<CR>
