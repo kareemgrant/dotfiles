@@ -10,14 +10,18 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'rking/ag.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -101,11 +105,12 @@ map <leader>h :tabprevious<cr>
 "map <leader>tf :tabfirst<cr>
 "map <leader>tl :tablast<cr>
 "map <leader>tm :tabmove
+map <C-n> :NERDTreeToggle<CR>
 
 map <Leader>e :Explore<cr>
 map <Leader>v :vsplit<cr>
 map <Leader>s :split<cr>
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
@@ -132,16 +137,22 @@ nnoremap <silent> ]B :blast<CR>
 " comment to set current directory to working directory
 noremap ,cd :cd %:p:h<CR>:pwd<CR>
 
-" Reset CommandT index after files have been added
-augroup CommandTExtension
-  autocmd!
-  autocmd FocusGained * CommandTFlush
-  autocmd BufWritePost * CommandTFlush
-augroup END
-
 " Testing mappings
 map <Leader>o :call RunCurrentLineInTest()<CR>
 map <Leader>r :call RunCurrentTest()<CR>
+
+" FuzzyFinder settings
+nmap ,f :FufFileWithCurrentBufferDir<CR>
+nmap ,b :FufBuffer<CR>
+"nmap ,t :FufTaggedFile<CR>
+nnoremap ,t :<C-u>FufFile **/<CR>
+
+" On by default, turn it off for html
+let g:syntastic_mode_map = { 'mode': 'active',
+    \ 'active_filetypes': [],
+    \ 'passive_filetypes': ['html'] }
+
+let g:syntastic_javascript_checkers = ['jshint']
 
 
 " rspec mappings
@@ -190,6 +201,9 @@ function! SetTestFileWithLine()
   let g:bjo_test_file_line=line(".")
 endfunction
 
+" Nerdtree settings
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 
 " Uncomment to use Jamis Buck's file opening plugin
