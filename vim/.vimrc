@@ -20,8 +20,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'rking/ag.vim'
+Plugin 'kien/ctrlp.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -142,10 +142,10 @@ map <Leader>o :call RunCurrentLineInTest()<CR>
 map <Leader>r :call RunCurrentTest()<CR>
 
 " FuzzyFinder settings
-nmap ,f :FufFileWithCurrentBufferDir<CR>
-nmap ,b :FufBuffer<CR>
-"nmap ,t :FufTaggedFile<CR>
-nnoremap ,t :<C-u>FufFile **/<CR>
+"nmap ,f :FufFileWithCurrentBufferDir<CR>
+"nmap ,b :FufBuffer<CR>
+""nmap ,t :FufTaggedFile<CR>
+"nnoremap ,t :<C-u>FufFile **/<CR>
 
 " On by default, turn it off for html
 let g:syntastic_mode_map = { 'mode': 'active',
