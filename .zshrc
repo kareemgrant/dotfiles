@@ -7,7 +7,6 @@ bindkey -v
 alias cdp="cd /Users/kareemgrant/workspace/projects"
 alias cdc="cd /Users/kareemgrant/workspace/code"
 alias cdh="cd /Users/kareemgrant"
-alias capp="cd /Users/kareemgrant/workspace/hireology/Code/app/app"
 
 alias gphm="git push heroku master"
 alias gada="git add -A"
@@ -20,10 +19,16 @@ alias bi="bundle install"
 alias rc="bundle exec rails console"
 alias migrate="bundle exec rake db:migrate"
 alias server="bundle exec rails server"
+
+# Hireology settings
+alias capp="cd /Users/kareemgrant/workspace/hireology/Code/app/app"
+alias specf="bundle exec rspec spec_no_rails"
+alias cukes="bundle exec make run-cukes"
+alias specr="bundle exec rspec spec"
+
+
 alias drop="cd /Users/kareemgrant/Dropbox"
-
 alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
-
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
