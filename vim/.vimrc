@@ -133,7 +133,6 @@ noremap ,cd :cd %:p:h<CR>:pwd<CR>
 
 " Testing mappings
 map <Leader>c :!ctags -R -f ./.git/tags .<CR>
-map <Leader>r :call RunCurrentTest()<CR>
 
 " On by default, turn it off for html
 let g:syntastic_mode_map = { 'mode': 'active',
