@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/kareemgrant/workspace/projects/saaslytics-api/ng-app/bower_components'
-let g:netrw_dirhist_2='/Users/kareemgrant/workspace/projects/saaslytics-api/ng-app/bower_components/flot'
-let g:netrw_dirhist_3='/Users/kareemgrant/workspace/projects/saaslytics-api/ng-app/bower_components'
-let g:netrw_dirhist_4='/Users/kareemgrant/workspace/projects/saaslytics-api/ng-app/bower_components/angular-strap'
-let g:netrw_dirhist_5='/Users/kareemgrant'
-let g:netrw_dirhist_6='/Users/kareemgrant/workspace/projects/saaslytics-api/ng-app/app/scripts/controllers'
-let g:netrw_dirhist_7='/Users/kareemgrant/workspace/projects/saaslytics-api/ng-app/app/scripts'
-let g:netrw_dirhist_8='/Users/kareemgrant/workspace/projects/saaslytics-api/ng-app/app/scripts/directives'
-let g:netrw_dirhist_9='/Users/kareemgrant/workspace/projects/saaslytics-api'
+let g:netrw_dirhist_cnt =0

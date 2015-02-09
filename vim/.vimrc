@@ -12,12 +12,12 @@ Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Bundle 'L9'
 Bundle 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-ragtag'
 call vundle#end()
 
 filetype plugin indent on
@@ -33,7 +33,6 @@ set number
 set numberwidth=5
 
 syntax match Todo /\s\+$/
-
 
 "autocmd BufWritePre *.rb,*.haml, *erb, *js, :%s/\s\+$//e
 
@@ -101,7 +100,6 @@ map <leader>h :tabprevious<cr>
 "map <leader>tf :tabfirst<cr>
 "map <leader>tl :tablast<cr>
 "map <leader>tm :tabmove
-map <C-n> :NERDTreeToggle<CR>
 
 map <Leader>e :Explore<cr>
 map <Leader>v :vsplit<cr>
@@ -134,14 +132,7 @@ nnoremap <silent> ]B :blast<CR>
 noremap ,cd :cd %:p:h<CR>:pwd<CR>
 
 " Testing mappings
-map <Leader>o :call RunCurrentLineInTest()<CR>
-map <Leader>r :call RunCurrentTest()<CR>
-
-" FuzzyFinder settings
-"nmap ,f :FufFileWithCurrentBufferDir<CR>
-"nmap ,b :FufBuffer<CR>
-""nmap ,t :FufTaggedFile<CR>
-"nnoremap ,t :<C-u>FufFile **/<CR>
+map <Leader>c :!ctags -R -f ./.git/tags .<CR>
 
 " On by default, turn it off for html
 let g:syntastic_mode_map = { 'mode': 'active',
@@ -149,69 +140,4 @@ let g:syntastic_mode_map = { 'mode': 'active',
     \ 'passive_filetypes': ['html'] }
 
 let g:syntastic_javascript_checkers = ['jshint']
-
-
-" rspec mappings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Test-running stuff
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RunCurrentTest()
-  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
-  if in_test_file
-    call SetTestFile()
-
-    if match(expand('%'), '\.feature$') != -1
-      call SetTestRunner("!zeus cucumber")
-      exec g:bjo_test_runner g:bjo_test_file
-    elseif match(expand('%'), '_spec\.rb$') != -1
-      call SetTestRunner("!zeus rspec")
-      exec g:bjo_test_runner g:bjo_test_file
-    else
-      call SetTestRunner("!ruby -Itest")
-      exec g:bjo_test_runner g:bjo_test_file
-    endif
-  else
-    exec g:bjo_test_runner g:bjo_test_file
-  endif
-endfunction
-
-function! SetTestRunner(runner)
-  let g:bjo_test_runner=a:runner
-endfunction
-
-function! RunCurrentLineInTest()
-  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
-  if in_test_file
-    call SetTestFileWithLine()
-  end
-
-  exec "!zeus rspec" g:bjo_test_file . ":" . g:bjo_test_file_line
-endfunction
-
-function! SetTestFile()
-  let g:bjo_test_file=@%
-endfunction
-
-function! SetTestFileWithLine()
-  let g:bjo_test_file=@%
-  let g:bjo_test_file_line=line(".")
-endfunction
-
-" Nerdtree settings
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-
-" Uncomment to use Jamis Buck's file opening plugin
-"map <Leader>t :FuzzyFinderTextMate<Enter>
-
-" Controversial...swap colon and semicolon for easier commands
-"nnoremap ; :
-"nnoremap : ;
-
-"vnoremap ; :
-"vnoremap : ;
-
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+let g:ctrlp_working_path_mode = 'ra'
