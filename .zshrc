@@ -7,6 +7,7 @@ bindkey -v
 alias cdp="cd /Users/kareemgrant/workspace/projects"
 alias cdc="cd /Users/kareemgrant/workspace/code"
 alias cdh="cd /Users/kareemgrant"
+alias capp="cd /Users/kareemgrant/workspace/hireology/Code/app/app"
 
 alias gphm="git push heroku master"
 alias gada="git add -A"
@@ -17,6 +18,8 @@ alias gpoh="git push origin master && git push heroku master"
 alias be="bundle exec $1"
 alias bi="bundle install"
 alias rc="bundle exec rails console"
+alias migrate="bundle exec rake db:migrate"
+alias server="bundle exec rails server"
 alias drop="cd /Users/kareemgrant/Dropbox"
 
 alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
