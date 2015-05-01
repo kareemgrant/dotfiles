@@ -34,8 +34,6 @@ set numberwidth=5
 
 syntax match Todo /\s\+$/
 
-"autocmd BufWritePre *.rb,*.haml, *erb, *js, :%s/\s\+$//e
-
 runtime macros/matchit.vim        " Load the matchit plugin.
 
 set showcmd                       " Display incomplete commands.
@@ -83,28 +81,36 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 " Remove trailing whitespace on save for ruby files.
 au BufWritePre *.rb :%s/\s\+$//e
 
-" Or use vividchalk
 colorscheme codeschool
-"colorscheme vidvidchalk
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
-" Tab mappings.
-:let mapleader=","
-"map <leader>tt :tabnew<cr>
-"map <leader>te :tabedit
-"map <leader>tc :tabclose<cr>
-"map <leader>to :tabonly<cr>
-map <leader>l :tabnext<cr>
-map <leader>h :tabprevious<cr>
-"map <leader>tf :tabfirst<cr>
-"map <leader>tl :tablast<cr>
-"map <leader>tm :tabmove
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
-map <Leader>e :Explore<cr>
+:let mapleader=","
+" opens new buffer
+nmap <leader>T :enew<cr>
+
+" moves to the next buffer
+nmap <leader>l :bnext<cr>
+
+" moves to the previous buffer
+nmap <Leader>h :bprevious<cr>
+
+" close current buffer and move to previous one
+" moves to the previous buffer
+nmap <Leader>bq :bp <BAR> bd #<cr>
+
+" show all open buffers and their status
+nmap <Leader>bl :ls<cr>
+
 map <Leader>v :vsplit<cr>
 map <Leader>s :split<cr>
 nnoremap <leader>a :Ag
+map <Leader>e :Explore<cr>
+
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
@@ -131,7 +137,7 @@ nnoremap <silent> ]B :blast<CR>
 " comment to set current directory to working directory
 noremap ,cd :cd %:p:h<CR>:pwd<CR>
 
-" Testing mappings
+" tags
 map <Leader>c :!ctags -R -f ./.git/tags .<CR>
 
 " On by default, turn it off for html
@@ -140,4 +146,10 @@ let g:syntastic_mode_map = { 'mode': 'active',
     \ 'passive_filetypes': ['html'] }
 
 let g:syntastic_javascript_checkers = ['jshint']
+
+" CtrlP
 let g:ctrlp_working_path_mode = 'ra'
+nmap <Leader>bb :CtrlPBuffer<CR>
+nmap <Leader>bm :CtrlPMixed<CR>
+nmap <Leader>bs :CtrlPMRU<CR>
+
