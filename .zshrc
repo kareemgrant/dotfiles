@@ -18,6 +18,7 @@ alias gpoh="git push origin master && git push heroku master"
 alias be="bundle exec $1"
 alias bi="bundle install"
 alias rc="bundle exec rails console"
+alias rr="bundle exec rake routes"
 alias migrate="bundle exec rake db:migrate"
 alias server="bundle exec rails server"
 alias drop="cd /Users/kareemgrant/Dropbox"
@@ -50,3 +51,6 @@ export PATH=/usr/local/share/npm/bin:$PATH
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
