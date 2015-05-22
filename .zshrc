@@ -20,6 +20,9 @@ alias rc="bundle exec rails console"
 alias migrate="bundle exec rake db:migrate"
 alias server="bundle exec rails server"
 
+alias zsource="source ~/.zshrc"
+alias taginit="ctags -R ."
+
 # Hireology settings
 alias capp="cd /Users/kareemgrant/workspace/hireology/Code/app/app"
 alias specf="bundle exec rspec spec_no_rails"
