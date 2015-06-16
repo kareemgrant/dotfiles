@@ -18,6 +18,7 @@ Bundle 'L9'
 Bundle 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-repeat'
 call vundle#end()
 
 filetype plugin indent on
@@ -117,10 +118,10 @@ autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 " Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+"nnoremap <Left> :echoe "Use h"<CR>
+"nnoremap <Right> :echoe "Use l"<CR>
+"nnoremap <Up> :echoe "Use k"<CR>
+"nnoremap <Down> :echoe "Use j"<CR>
 
 " easy split navigation
 noremap <C-h> <C-w>h
