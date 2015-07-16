@@ -6,7 +6,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-endwise'
@@ -19,6 +18,10 @@ Bundle 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-repeat'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 call vundle#end()
 
 filetype plugin indent on
@@ -154,3 +157,8 @@ nmap <Leader>bb :CtrlPBuffer<CR>
 nmap <Leader>bm :CtrlPMixed<CR>
 nmap <Leader>bs :CtrlPMRU<CR>
 
+
+" Ultisnips config
+let g:UltiSnipsExpandTrigger="<c-h>"
+let g:UltiSnipsJumpForwardTrigger="<c-h>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
