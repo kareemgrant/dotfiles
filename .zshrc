@@ -37,19 +37,19 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 export GEM_EDITOR='mvim'
-export EDITOR='mvim'
+export EDITOR='/usr/local/bin/mvim'
 
 export PATH="$HOME/.bin:$PATH"
 # recommended by brew doctor
 
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$PATH:/usr/local/lib/node_modules"
 source $(brew --prefix nvm)/nvm.sh
 export PATH="$HOME/.rbenv/bin:$PATH"
 #eval "$(rbenv init -)"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-export PATH=/usr/local/share/npm/bin:$PATH
+#export PATH=/usr/local/share/npm/bin:$PATH
 # adding text and loving it
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
@@ -62,3 +62,6 @@ plugins=(git)
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+### Fix for python crashing issue
+export DYLD_FORCE_FLAT_NAMESPACE=1

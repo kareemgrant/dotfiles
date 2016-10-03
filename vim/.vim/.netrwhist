@@ -1,3 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/kareemgrant/workspace/javascript/webpack_stuff/first_webpack_app'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/kareemgrant/workspace/hireology/Code/app/app/app/views/onboarding'
+let g:netrw_dirhist_2='/Users/kareemgrant/workspace/hireology/Code/app/app/lib/tasks'
+let g:netrw_dirhist_3='/Users/kareemgrant/workspace/hireology/Code/app/app/lib'
+let g:netrw_dirhist_4='/Users/kareemgrant/workspace/hireology/Code/app/app'
+let g:netrw_dirhist_5='/Users/kareemgrant/workspace/hireology/Code/app/app/app/services/service_facades/clickboarding'
+let g:netrw_dirhist_6='/Users/kareemgrant/workspace/hireology/Code/app/app/app/services/service_facades/clickboarding/onboarding'
+let g:netrw_dirhist_7='/Users/kareemgrant/workspace/hireology/Code/dotfiles'
