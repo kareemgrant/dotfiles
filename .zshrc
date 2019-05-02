@@ -42,12 +42,15 @@ export EDITOR='/usr/local/bin/mvim'
 export PATH="$HOME/.bin:$PATH"
 # recommended by brew doctor
 
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-export PATH="$PATH:/usr/local/lib/node_modules"
-source $(brew --prefix nvm)/nvm.sh
+export PATH="/usr/local/bin:$PATH"
+source /Users/kareemgrant/.asdf/asdf.sh
+
+# export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+# export PATH="$PATH:/usr/local/lib/node_modules"
+# source $(brew --prefix nvm)/nvm.sh
 export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+eval "$(rbenv init -)"
+# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 #export PATH=/usr/local/share/npm/bin:$PATH
 # adding text and loving it

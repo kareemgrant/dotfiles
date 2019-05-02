@@ -1,29 +1,28 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
+" set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
-Bundle 'L9'
-Bundle 'rking/ag.vim'
-Plugin 'tpope/vim-ragtag'
-Plugin 'tpope/vim-repeat'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
-call vundle#end()
+" call vundle#begin()
+" Plugin 'gmarik/Vundle.vim'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'tpope/vim-rails'
+" Plugin 'tpope/vim-haml'
+" Plugin 'tpope/vim-endwise'
+" Plugin 'tpope/vim-surround'
+" Plugin 'scrooloose/nerdcommenter'
+" Plugin 'scrooloose/syntastic'
+" Plugin 'bling/vim-airline'
+" Bundle 'L9'
+" Bundle 'rking/ag.vim'
+" Plugin 'tpope/vim-ragtag'
+" Plugin 'tpope/vim-repeat'
+" Plugin 'leafgarland/typescript-vim'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" call vundle#end()
 
 filetype plugin indent on
 syntax on
