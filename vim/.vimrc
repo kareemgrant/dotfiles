@@ -88,7 +88,6 @@ au BufWritePre *.rb :%s/\s\+$//e
 syntax enable
 "set t_Co=16
 "let g:solarized_termcolors=16
-colorscheme codeschool
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
